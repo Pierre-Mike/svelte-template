@@ -1,32 +1,47 @@
+<!--<script>-->
+<!--    import Players from './components/Players.svelte';-->
+
+<!--    import Home from "./pages/Home.svelte";-->
+<!--    let count = 0-->
+<!--    setInterval(()=>count++,1000);-->
+<!--    $: count = count%10==0?0:count-->
+<!--    export let basics;-->
+<!--</script>-->
+
+
+<!--<Errors/>-->
+<!--<header>-->
+<!--    <menu>-->
+<!--        <ul>-->
+<!--            <li>test link</li>-->
+<!--        </ul>-->
+<!--    </menu>-->
+<!--</header>-->
+
+<!--<main>-->
+<!--    <h1>Hello {basics.name} : {count}!</h1>-->
+<!--    <h1>{basics.location.address}</h1>-->
+<!--    <Home/>-->
+<!--    <Players/>-->
+<!--</main>-->
 <script>
-	import Players from './Players.svelte';
-	export let name;
+    import { Router, Link, Route } from "svelte-routing";
+    import Errors from "./components/Errors.svelte"
+    import Home from "./pages/Home.svelte";
+    import Players from "./pages/Players.svelte";
+    export let url = "";
+
 </script>
 
-<main>
-	<Players/>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-</main>
-
-<style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
-</style>
+<Router url="{url}">
+    <Errors/>
+    <nav>
+        <Link to="/">Home</Link>
+        <Link to="players">player</Link>
+    </nav>
+    <div>
+        <Route path="players" component="{Players}" />
+        <Route path="/"><Home /></Route>
+    </div>
+</Router>
 
