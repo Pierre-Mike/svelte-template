@@ -1,13 +1,12 @@
-<script>
-	import Players from './Players.svelte';
+<script lang="ts">
+	import Players from "./Players/Players.svelte";
+	import { onDestroy } from "svelte";
 	export let name;
+	import { storeVisible } from "./lib/redux.js";
+	let visible = false;
+	const unsubscribe = storeVisible.subscribe((value) => (visible = value));
+	onDestroy(unsubscribe);
 </script>
-
-<main>
-	<Players/>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-</main>
 
 <style>
 	main {
@@ -30,3 +29,12 @@
 	}
 </style>
 
+<main>
+	{#if visible}
+		<Players />
+		<button on:click={() => storeVisible.dispatch('HIDE')}>turn off</button>
+	{:else}
+		<button on:click={() => storeVisible.dispatch('SHOW')}>turn on</button>
+	{/if}
+	<h1>Hello {name}!</h1>
+</main>

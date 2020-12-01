@@ -2,3 +2,4 @@
 /public/build/
 
 .DS_Store
+git push --set-upstream origin master
