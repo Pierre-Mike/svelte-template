@@ -2,11 +2,21 @@
 	import Players from "./Players/Players.svelte";
 	import { onDestroy } from "svelte";
 	export let name;
-	import { storeVisible } from "./lib/redux.js";
+	import switchStore from "./stores/switchStore.js";
 	let visible = false;
-	const unsubscribe = storeVisible.subscribe((value) => (visible = value));
+	const unsubscribe = switchStore.subscribe((value) => (visible = value));
 	onDestroy(unsubscribe);
 </script>
+
+<main>
+	{#if visible}
+		<Players />
+		<button on:click={() => switchStore.switch()}>turn off</button>
+	{:else}
+		<button on:click={() => switchStore.switch()}>turn on</button>
+	{/if}
+	<span>Hello {name}!</span>
+</main>
 
 <style>
 	main {
@@ -28,13 +38,3 @@
 		}
 	}
 </style>
-
-<main>
-	{#if visible}
-		<Players />
-		<button on:click={() => storeVisible.dispatch('HIDE')}>turn off</button>
-	{:else}
-		<button on:click={() => storeVisible.dispatch('SHOW')}>turn on</button>
-	{/if}
-	<h1>Hello {name}!</h1>
-</main>
