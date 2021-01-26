@@ -1,19 +1,19 @@
 <script lang="ts">
+	export let name;
 	import Players from "./Players/Players.svelte";
 	import { onDestroy } from "svelte";
-	export let name;
-	import switchStore from "./stores/switchStore.js";
+  import switchStore  from "./stores/switchStore.js";
+  let { subscribe, turn } = switchStore 
 	let visible = false;
-	const unsubscribe = switchStore.subscribe((value) => (visible = value));
-	onDestroy(unsubscribe);
+	onDestroy(subscribe(_=>{}))
 </script>
 
 <main>
-	{#if visible}
+	{#if $switchStore}
 		<Players />
-		<button on:click={() => switchStore.switch()}>turn off</button>
+		<button on:click={() => turn()}>turn off</button>
 	{:else}
-		<button on:click={() => switchStore.switch()}>turn on</button>
+		<button on:click={() => turn()}>turn ON</button>
 	{/if}
 	<span>Hello {name}!</span>
 </main>

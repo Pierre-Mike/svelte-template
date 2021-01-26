@@ -1,5 +1,5 @@
 <script>
-	import { playerStore } from "../stores/playerStore.js";
+	import playerStore from "../stores/playerStore.js";
 
 	export let name;
 	export let score;
@@ -10,7 +10,7 @@
 	const minusScore = (n = 1) => {
 		score -= n;
 	};
-	$: playerStore.update(detail);
+	$: playerStore.updatePlayer({ name, score, id });
 </script>
 
 <div class="player">
@@ -20,7 +20,7 @@
 	<button on:click={() => minusScore()}>-</button>
 	<button
 		on:click={() => {
-			playerStore.remove(id);
+			playerStore.removePlayer(id);
 		}}>X</button
 	>
 </div>

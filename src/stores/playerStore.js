@@ -3,26 +3,28 @@ import { writable } from "svelte/store"
 
 const init = []
 
-let store = writable(init)
+let { update, subscribe } = writable(init)
 
-export default {
-  subscribe: store.subscribe,
-  add: (name) => {
-    store.update(c => [...c, { name, score: 0 }])
-  },
-  update: (detail) => {
-    store.update(c => {
-      c[detail.id] = detail
-      return c
-    })
+const addPlayer = (name) => {
+  console.log(`adding player ${name}`)
+  update(c => [...c, { name, score: 0 }])
+}
+const updatePlayer = (detail) => {
+  console.log(`updating player ${detail.name}`)
+  update(c => {
+    c[detail.id] = detail
+    return c
+  })
 
-  },
-  remove: (id) => {
-    store.update(c => {
-      c.splice(id, 1)
-      return c
-    })
-  }
+}
+const removePlayer = (id) => {
+  update(c => {
+    c.splice(id, 1)
+    return c
+  })
 }
 
-
+export default {
+  subscribe,
+  addPlayer, removePlayer, updatePlayer
+}

@@ -2,16 +2,21 @@
 	import Player from "./Player.svelte";
 	import { onDestroy } from "svelte";
 
-	import { playerStore } from "../stores/playerStore.js";
-	const unsub = playerStore.subscribe();
+	import playerStore from "../stores/playerStore.js";
+	const unsub = playerStore.subscribe((_) => {
+		console.log("updated players store");
+	});
 	let newPlayerName = "";
 
 	function addPlayers(name) {
-		playerStore.add(name);
+		playerStore.addPlayer(name);
 		newPlayerName = "";
 	}
 
-	onDestroy(unsub);
+	onDestroy(() => {
+		console.log("players detroyed");
+		unsub();
+	});
 </script>
 
 <main>
