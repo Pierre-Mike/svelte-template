@@ -1577,10 +1577,10 @@ supports-color@^6.1.0:
   dependencies:
     has-flag "^3.0.0"
 
-svelte-routing@^1.4.0:
-  version "1.4.2"
-  resolved "https://registry.yarnpkg.com/svelte-routing/-/svelte-routing-1.4.2.tgz#291160b537c9c73e711731eb099c48bb24cc3419"
-  integrity sha512-CSCKRLeOp9vjsDGGOEgL9DPm9HZLgZuTNehyTCl3K+6fCVH1Aw/K/WicavAVNcbsHmdR4wgF//0YVR9hrcdvGA==
+svelte-routing@^1.4.2:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/svelte-routing/-/svelte-routing-1.5.0.tgz#a518cf67d8c09dd30a04cf6f9473ce5612fd4c8b"
+  integrity sha512-4ftcSO2x5kzCUWQKm9Td6/C+t7lRjMEo72utRO0liS/aWZuRwAXOBl3y+hWZw8tV+DTGElqaAAyi44AuWXcVBg==
 
 svelte@^3.0.0:
   version "3.22.3"
@@ -1724,9 +1724,9 @@ ws@^6.2.1:
     async-limiter "~1.0.0"
 
 y18n@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/y18n/-/y18n-4.0.0.tgz#95ef94f85ecc81d007c264e190a120f0a3c8566b"
-  integrity sha512-r9S/ZyXu/Xu9q1tYlpsLIsa3EeLXXk0VwlxqTcFRfg9EhMW+17kbt9G0NrgCmhGb5vT2hyhJZLfDGx+7+5Uj/w==
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/y18n/-/y18n-4.0.1.tgz#8db2b83c31c5d75099bb890b23f3094891e247d4"
+  integrity sha512-wNcy4NvjMYL8gogWWYAO7ZFWFfHcbdbE57tZO8e4cbpj8tfUcwrwqSl3ad8HxpYWCdXcJUCeKKZS62Av1affwQ==
 
 yallist@^2.1.2:
   version "2.1.2"
