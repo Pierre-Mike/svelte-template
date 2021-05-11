@@ -395,6 +395,11 @@ decamelize@^1.1.2, decamelize@^1.2.0:
   resolved "https://registry.yarnpkg.com/decamelize/-/decamelize-1.2.0.tgz#f6534d15148269b20352e7bee26f501f9a191290"
   integrity sha1-9lNNFRSCabIDUue+4m9QH5oZEpA=
 
+dedent-js@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/dedent-js/-/dedent-js-1.0.1.tgz#bee5fb7c9e727d85dffa24590d10ec1ab1255305"
+  integrity sha1-vuX7fJ5yfYXf+iRZDRDsGrElUwU=
+
 delayed-stream@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/delayed-stream/-/delayed-stream-1.0.0.tgz#df3ae199acadfb7d440aaae0b29e2272b24ec619"
@@ -842,9 +847,9 @@ locate-path@^3.0.0:
     path-exists "^3.0.0"
 
 lodash@^4.0.0, lodash@^4.17.15, lodash@~4.17.12:
-  version "4.17.15"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
-  integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
+  version "4.17.21"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
+  integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
 
 loud-rejection@^1.0.0:
   version "1.6.0"
@@ -853,6 +858,13 @@ loud-rejection@^1.0.0:
   dependencies:
     currently-unhandled "^0.4.1"
     signal-exit "^3.0.0"
+
+lower-case@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/lower-case/-/lower-case-2.0.2.tgz#6fa237c63dbdc4a82ca0fd882e4722dc5e634e28"
+  integrity sha512-7fm3l3NAF9WfN6W3JOmf5drwpVqX78JtoGJ3A6W0a6ZnldM41w2fV5D490psKFTpMds8TJse/eHLFFsNHHjHgg==
+  dependencies:
+    tslib "^2.0.3"
 
 lru-cache@^4.0.1:
   version "4.1.5"
@@ -940,6 +952,14 @@ nan@^2.13.2:
   version "2.14.1"
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.14.1.tgz#d7be34dfa3105b91494c3147089315eff8874b01"
   integrity sha512-isWHgVjnFjh2x2yuJ/tj3JbwoHu3UC2dX5G/88Cm24yB6YopVgxvBObDY7n5xW6ExmFhJpSEQqFPvq9zaXc8Jw==
+
+no-case@^3.0.4:
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/no-case/-/no-case-3.0.4.tgz#d361fd5c9800f558551a8369fc0dcd4662b6124d"
+  integrity sha512-fgAN3jGAh+RoxUGZHTSOLJIqUc2wmoBwGR4tbpNAKmmovFoWq0OdRkb0VkldReO2a2iBT/OEulG9XSUc10r3zg==
+  dependencies:
+    lower-case "^2.0.2"
+    tslib "^2.0.3"
 
 node-gyp@^3.8.0:
   version "3.8.0"
@@ -1089,6 +1109,14 @@ parse-json@^2.2.0:
   integrity sha1-9ID0BDTvgHQfhGkJn43qGPVaTck=
   dependencies:
     error-ex "^1.2.0"
+
+pascal-case@^3.1.1:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/pascal-case/-/pascal-case-3.1.2.tgz#b48e0ef2b98e205e7c1dae747d0b1508237660eb"
+  integrity sha512-uWlGT3YSnK9x3BQJaOdcZwrnV6hPpd8jFH1/ucpiLRPh/2zCVJKS19E4GvYHvaCcACn3foXZ0cLB9Wrx1KGe5g==
+  dependencies:
+    no-case "^3.0.4"
+    tslib "^2.0.3"
 
 path-exists@^2.0.0:
   version "2.1.0"
@@ -1577,10 +1605,20 @@ supports-color@^6.1.0:
   dependencies:
     has-flag "^3.0.0"
 
-svelte-routing@^1.4.0:
-  version "1.4.2"
-  resolved "https://registry.yarnpkg.com/svelte-routing/-/svelte-routing-1.4.2.tgz#291160b537c9c73e711731eb099c48bb24cc3419"
-  integrity sha512-CSCKRLeOp9vjsDGGOEgL9DPm9HZLgZuTNehyTCl3K+6fCVH1Aw/K/WicavAVNcbsHmdR4wgF//0YVR9hrcdvGA==
+svelte-routing@^1.4.2:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/svelte-routing/-/svelte-routing-1.6.0.tgz#cdfed6b665d4a851f3d7e532e16bfbb318ce5294"
+  integrity sha512-+DbrSGttLA6lan7oWFz1MjyGabdn3tPRqn8Osyc471ut2UgCrzM5x1qViNMc2gahOP6fKbKK1aNtZMJEQP2vHQ==
+  dependencies:
+    svelte2tsx "^0.1.157"
+
+svelte2tsx@^0.1.157:
+  version "0.1.189"
+  resolved "https://registry.yarnpkg.com/svelte2tsx/-/svelte2tsx-0.1.189.tgz#3eacbeec8cef8a120da05373bb59be0eb46f4880"
+  integrity sha512-Mo4Sei1tNYthzSZx6biGSK7pI6/vj7nGvvmSevmLIiws/o1hyj1UIHn+AwqogeA9L46fcvy6WU3t7HxDg+LbLg==
+  dependencies:
+    dedent-js "^1.0.1"
+    pascal-case "^3.1.1"
 
 svelte@^3.0.0:
   version "3.22.3"
@@ -1636,6 +1674,11 @@ trim-newlines@^1.0.0:
   integrity sha512-m6s2OdQe5wgpFMC+pAJ+q9djG82O2jcHPOI6RNg1yy9rCYR+WD6Nbpl32fDpfC56nirdRy+opFa/Vk7HYhqaew==
   dependencies:
     glob "^7.1.2"
+
+tslib@^2.0.3:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.2.0.tgz#fb2c475977e35e241311ede2693cee1ec6698f5c"
+  integrity sha512-gS9GVHRU+RGn5KQM2rllAlR3dU6m7AcpJKdtH8gFvQiC4Otgk98XnmMU+nZenHt/+VhnBPWwgrJsyrdcw6i23w==
 
 tunnel-agent@^0.6.0:
   version "0.6.0"
